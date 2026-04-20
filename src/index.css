@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0F172A;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #0F172A;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-dark-hover {
+    @apply glass-dark hover:bg-black/60 hover:border-white/20 transition-all duration-500;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-brand-red text-white font-bold rounded-2xl shadow-lg hover:bg-brand-red/90 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 text-center;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/5 text-white font-bold rounded-2xl border border-white/10 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 text-center;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight uppercase;
+  }
+
+  .container-responsive {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+.fire-gradient {
+  background: linear-gradient(135deg, #E21D2C 0%, #F59E0B 100%);
+}
+
+.dark-gradient {
+  background: radial-gradient(circle at top right, #1E293B, #0F172A);
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
